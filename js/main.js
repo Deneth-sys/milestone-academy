@@ -1,6 +1,6 @@
 // Wait for the HTML to fully load before running the script
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // ==========================================
     // 1. MOBILE MENU TOGGLE LOGIC
     // ==========================================
@@ -9,25 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     if (mobileMenuToggle && navMenu) {
-        
+
         // Helper function to handle opening/closing
         function toggleMenu() {
             navMenu.classList.toggle('active');
-            body.classList.toggle('menu-open'); 
-            
+            body.classList.toggle('menu-open');
+
             const icon = mobileMenuToggle.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             }
         }
 
         // Toggle when hamburger button is clicked
         mobileMenuToggle.addEventListener('click', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             e.stopPropagation(); // Prevents the click from immediately triggering the "click outside" listener
             toggleMenu();
         });
@@ -43,13 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close menu when clicking OUTSIDE of it (on the page background)
         document.addEventListener('click', function(e) {
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(e.target) && 
+            if (navMenu.classList.contains('active') &&
+                !navMenu.contains(e.target) &&
                 !mobileMenuToggle.contains(e.target)) {
                 toggleMenu();
             }
         });
 
+        // Close menu on Escape key, and on resize back up to desktop width
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
     } else {
         console.warn("Mobile menu elements not found! Check your HTML IDs.");
     }
@@ -81,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // In a real website, you would send this data to a server here.
             // For now, we show a success message and reset the form.
             alert('Thank you! Your inquiry has been received. We will contact you soon.');
@@ -104,5 +118,21 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
         }
     });
+
+    // ==========================================
+    // 5. STICKY HEADER SHADOW ON SCROLL
+    // ==========================================
+    const header = document.querySelector('.header');
+    if (header) {
+        const updateHeaderShadow = () => {
+            if (window.scrollY > 8) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        };
+        updateHeaderShadow();
+        window.addEventListener('scroll', updateHeaderShadow, { passive: true });
+    }
 
 });

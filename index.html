@@ -7,28 +7,23 @@
     <title>Milestone Academy | Premier Education Center in Wattala</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- ================= HEADER & NAVIGATION ================= -->
     <header class="header">
-        <div class="container nav-container">
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Milestone Academy</span>
-            </a>
-
-            <!-- Mobile Hamburger Button -->
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Navigation Links (Includes Mobile CTA at the bottom) -->
-            <nav class="nav-menu" id="navMenu">
-                <ul class="nav-links">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    Milestone Academy
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="courses.html" class="nav-link">Courses</a></li>
@@ -37,30 +32,26 @@
                     <li><a href="admissions.html" class="nav-link">Admissions</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+                    <li class="mobile-cta">
+                        <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                        <div class="mobile-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </li>
                 </ul>
-                
-                <!-- Mobile Only: Apply Button & Socials -->
-                <div class="mobile-cta">
-                    <a href="admissions.html" class="btn btn-primary btn-block">Apply Now</a>
-                    <div class="mobile-social">
+                <div class="nav-cta">
+                    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                    <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Desktop Only: Apply Button & Socials -->
-            <div class="nav-cta">
-                <a href="admissions.html" class="btn btn-primary">Apply Now</a>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
             </div>
-        </div>
+        </nav>
     </header>
     <!-- ================= END HEADER ================= -->
 
@@ -68,6 +59,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-star"></i> 5.0 Rated &middot; Wattala's Trusted Academy</span>
                 <h1>Empowering Minds, Shaping Futures</h1>
                 <p>Experience a nurturing environment with personalized attention at Wattala's top-rated education center.</p>
                 <div class="hero-buttons">
@@ -81,6 +73,7 @@
     <!-- Why Choose Us -->
     <section class="features section-padding">
         <div class="container">
+            <span class="eyebrow text-center">Why Milestone</span>
             <h2 class="section-title">Why Choose Milestone Academy</h2>
             <div class="features-grid">
                 <div class="feature-card">
@@ -111,6 +104,7 @@
     <!-- Testimonials -->
     <section class="testimonials section-padding bg-light">
         <div class="container">
+            <span class="eyebrow text-center">Community Voices</span>
             <h2 class="section-title">What Our Community Says</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
