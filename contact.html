@@ -6,6 +6,7 @@
     <meta name="description" content="Get in touch with Milestone Academy. Find our location in Wattala, operating hours, and send us a message.">
     <title>Contact Us | Milestone Academy Wattala</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,8 +15,13 @@
     <header class="header">
         <nav class="navbar">
             <div class="container nav-container">
-                <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i> Milestone Academy</a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    Milestone Academy
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
@@ -25,19 +31,29 @@
                     <li><a href="admissions.html" class="nav-link">Admissions</a></li>
                     <li><a href="contact.html" class="nav-link active">Contact</a></li>
                     <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+                    <li class="mobile-cta">
+                        <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                        <div class="mobile-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="nav-cta">
                     <a href="admissions.html" class="btn btn-primary">Apply Now</a>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Contact Us</h1>
@@ -45,6 +61,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="section-padding">
         <div class="container">
             <div class="contact-wrapper">
@@ -124,7 +141,10 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-graduation-cap"></i> Milestone Academy</h3>
-                    <p>Empowering minds and shaping futures.</p>
+                    <p>Empowering minds and shaping futures through personalized education in a nurturing environment.</p>
+                    <div class="women-owned-badge">
+                        <i class="fas fa-venus"></i> Proudly Women-Owned
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -132,17 +152,33 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Contact Info</h4>
                     <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 65, 15 Jayamaha Bakery Rd, Wattala 11300</li>
                         <li><i class="fas fa-phone"></i> 071 777 0808</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 2:30 PM</li>
                     </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Milestone Academy. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

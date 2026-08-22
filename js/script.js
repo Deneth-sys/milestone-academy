@@ -5,6 +5,10 @@ const navMenu = document.getElementById('navMenu');
 if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        
+        // Lock body scroll when menu is open
+        document.body.classList.toggle('menu-open'); 
+        
         const icon = mobileMenuToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
             icon.classList.remove('fa-bars');
@@ -19,6 +23,8 @@ if (mobileMenuToggle && navMenu) {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open'); // Unlock scroll
+            
             const icon = mobileMenuToggle.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
@@ -103,13 +109,6 @@ forms.forEach(form => {
             // Show success message
             alert('Thank you for your submission! We will contact you soon.');
             form.reset();
-            
-            // In production, you would send the form data to a server here
-            // Example:
-            // fetch('/submit-form', {
-            //     method: 'POST',
-            //     body: new FormData(form)
-            // });
         } else {
             // Scroll to first error
             const firstError = form.querySelector('[style*="border-color: rgb(229, 62, 62)"]');
@@ -122,7 +121,6 @@ forms.forEach(form => {
 
 // ===== Sticky Header Effect =====
 const header = document.querySelector('.header');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
@@ -130,44 +128,28 @@ window.addEventListener('scroll', () => {
     if (currentScroll > 100) {
         header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
     } else {
-        header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12)';
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
     }
-    
-    lastScroll = currentScroll;
 });
-
-// ===== Lazy Loading for Images =====
-const images = document.querySelectorAll('img[data-src]');
-
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.add('loaded');
-            observer.unobserve(img);
-        }
-    });
-});
-
-images.forEach(img => imageObserver.observe(img));
 
 // ===== Counter Animation for Stats =====
 const statNumbers = document.querySelectorAll('.stat-number');
 
 const animateCounter = (element) => {
-    const target = parseFloat(element.textContent);
-    const duration = 2000; // 2 seconds
-    const step = target / (duration / 16); // 60fps
+    const targetText = element.textContent;
+    const target = parseFloat(targetText);
+    const suffix = targetText.replace(/[0-9.]/g, ''); // Get suffix like + or %
+    const duration = 2000; 
+    const step = target / (duration / 16); 
     let current = 0;
     
     const timer = setInterval(() => {
         current += step;
         if (current >= target) {
-            element.textContent = target % 1 !== 0 ? target.toFixed(1) : Math.floor(target);
+            element.textContent = (target % 1 !== 0 ? target.toFixed(1) : Math.floor(target)) + suffix;
             clearInterval(timer);
         } else {
-            element.textContent = target % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
+            element.textContent = (target % 1 !== 0 ? current.toFixed(1) : Math.floor(current)) + suffix;
         }
     }, 16);
 };
@@ -182,30 +164,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 statNumbers.forEach(stat => statsObserver.observe(stat));
-
-// ===== Course URL Parameter Handling =====
-const urlParams = new URLSearchParams(window.location.search);
-const courseParam = urlParams.get('course');
-
-if (courseParam) {
-    // Highlight or scroll to the selected course
-    const courseCards = document.querySelectorAll('.course-card');
-    courseCards.forEach((card, index) => {
-        const enrollButton = card.querySelector('a[href*="admissions.html"]');
-        if (enrollButton) {
-            const href = enrollButton.getAttribute('href');
-            if (href.includes(courseParam)) {
-                setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    card.style.border = '3px solid #F6AD55';
-                    setTimeout(() => {
-                        card.style.border = 'none';
-                    }, 3000);
-                }, 500);
-            }
-        }
-    });
-}
 
 // ===== Add Active Class to Current Page Nav =====
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';

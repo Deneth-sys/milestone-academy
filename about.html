@@ -6,6 +6,7 @@
     <meta name="description" content="Learn about Milestone Academy's mission to provide a positive learning atmosphere, expert teaching, and a nurturing environment in Wattala.">
     <title>About Us | Milestone Academy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +19,7 @@
                     <i class="fas fa-graduation-cap"></i>
                     Milestone Academy
                 </a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-menu" id="navMenu">
@@ -30,6 +31,15 @@
                     <li><a href="admissions.html" class="nav-link">Admissions</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+                    <li class="mobile-cta">
+                        <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                        <div class="mobile-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="nav-cta">
                     <a href="admissions.html" class="btn btn-primary">Apply Now</a>
@@ -54,36 +64,34 @@
     <!-- Our Story -->
     <section class="section-padding">
         <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">Our Story</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-light); max-width: 900px; margin: 0 auto 40px; text-align: center;">
-                    Milestone Academy was founded with a vision to provide exceptional education in a nurturing environment. We believe every student has unique potential, and our mission is to unlock that potential through personalized attention, innovative teaching methods, and a supportive community.
-                </p>
+            <h2 class="section-title">Our Story</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-light); max-width: 900px; margin: 0 auto 40px; text-align: center;">
+                Milestone Academy was founded with a vision to provide exceptional education in a nurturing environment. We believe every student has unique potential, and our mission is to unlock that potential through personalized attention, innovative teaching methods, and a supportive community.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
+                <div style="text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-bullseye" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Mission</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">To provide world-class education that nurtures critical thinking, creativity, and character development in every student.</p>
+                </div>
                 
-                <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
-                    <div style="text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-bullseye" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Mission</h3>
-                        <p style="color: var(--text-light); line-height: 1.7;">To provide world-class education that nurtures critical thinking, creativity, and character development in every student.</p>
+                <div style="text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-eye" style="font-size: 2.5rem; color: var(--primary-color);"></i>
                     </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-eye" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Vision</h3>
-                        <p style="color: var(--text-light); line-height: 1.7;">To be the leading educational institution in Wattala, recognized for academic excellence and holistic student development.</p>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Vision</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">To be the leading educational institution in Wattala, recognized for academic excellence and holistic student development.</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--primary-color);"></i>
                     </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-color) 0%, #ED8936 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Values</h3>
-                        <p style="color: var(--text-light); line-height: 1.7;">Excellence, inclusivity, innovation, and compassion guide everything we do at Milestone Academy.</p>
-                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Our Values</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">Excellence, inclusivity, innovation, and compassion guide everything we do at Milestone Academy.</p>
                 </div>
             </div>
         </div>
@@ -154,7 +162,7 @@
             <div class="cta-content">
                 <h2>Join Our Learning Community</h2>
                 <p>Experience the Milestone Academy difference today.</p>
-                <a href="admissions.html" class="btn btn-primary btn-large" style="background: var(--primary-color); color: white;">Enroll Now</a>
+                <a href="admissions.html" class="btn btn-primary btn-large">Enroll Now</a>
             </div>
         </div>
     </section>
