@@ -34,6 +34,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Prevents background scrolling when mobile menu is open */
 body.menu-open {
     overflow: hidden;
 }
@@ -88,7 +89,7 @@ img {
     border: none;
     font-size: 1rem;
     text-align: center;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -159,6 +160,7 @@ img {
     text-decoration: none;
     flex-shrink: 0;
     white-space: nowrap;
+    z-index: 1003;
 }
 
 .logo i {
@@ -222,6 +224,7 @@ img {
     gap: 15px;
     flex-shrink: 0;
     white-space: nowrap;
+    z-index: 1003;
 }
 
 .nav-cta .btn {
@@ -264,7 +267,7 @@ img {
     color: var(--primary-color);
     padding: 5px;
     line-height: 1;
-    z-index: 1001;
+    z-index: 1003; /* Higher than menu to stay clickable */
 }
 
 /* HIDE MOBILE CTA ON DESKTOP */
@@ -280,7 +283,7 @@ img {
 
     /* Hide Desktop CTA on Mobile */
     .nav-cta {
-        display: none; 
+        display: none !important; 
     }
 
     .nav-menu {
@@ -296,7 +299,7 @@ img {
         gap: 0;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        z-index: 1000;
+        z-index: 1002; /* FIXED: Higher than header (1000) so it slides OVER it */
         overflow-y: auto;
         flex: none;
         align-items: flex-start;
